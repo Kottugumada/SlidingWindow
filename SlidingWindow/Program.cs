@@ -23,6 +23,11 @@ namespace SlidingWindow
             SmallestSubArray sm = new SmallestSubArray();
             Console.Write(sm.MinSizeSubArray(7, new int[] { 2, 1, 5, 2, 3, 2 }));
 
+            // https://www.educative.io/courses/grokking-the-coding-interview/YQQwQMWLx80
+            Console.WriteLine("Given a string, find the length of the longest substring in it with no more than K distinct characters.");
+            LongestSubstring ls = new LongestSubstring();
+            Console.Write(ls.LongestSubstringKDistinct("araaci", 2));
+            
             Anagrams an = new Anagrams();
             string[] strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
             an.GroupAnagrams(strs);
