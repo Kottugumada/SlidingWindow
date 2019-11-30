@@ -8,7 +8,7 @@ namespace SlidingWindow
         public int LongestSubstringKDistinct(string str, int k)
         {
             int windowStart = 0;
-            int maxLength = Int32.MaxValue;
+            int maxLength = 0;
             char[] c = str.ToCharArray();
             Dictionary<char,int> dict = new Dictionary<char, int>();
 
