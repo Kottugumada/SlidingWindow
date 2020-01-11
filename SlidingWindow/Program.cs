@@ -22,17 +22,29 @@ namespace SlidingWindow
 			MaxAverage maxAvg = new MaxAverage();
 			maxAvg.FindMaxAverage(new int[] { 1, 12, -5, -6, 50, 3 }, 4);
 
-			// Window size is not fixed
-			// https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
-			Console.WriteLine("Given an array of positive numbers and a positive number ‘S’, find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray exists.");
+            // Window size is not fixed
+            // https://www.educative.io/courses/grokking-the-coding-interview/7XMlMEQPnnQ
+            // https://leetcode.com/problems/minimum-size-subarray-sum/
+            Console.WriteLine("Given an array of positive numbers and a positive number ‘S’, find the length of the smallest contiguous subarray whose sum is greater than or equal to ‘S’. Return 0, if no such subarray exists.");
             SmallestSubArray sm = new SmallestSubArray();
             Console.Write(sm.MinSizeSubArray(7, new int[] { 2, 1, 5, 2, 3, 2 }));
 
             // https://www.educative.io/courses/grokking-the-coding-interview/YQQwQMWLx80
             Console.WriteLine("Given a string, find the length of the longest substring in it with no more than K distinct characters.");
-            LongestSubstring ls = new LongestSubstring();
+            LongestSubstringK ls = new LongestSubstringK();
             Console.Write(ls.LongestSubstringKDistinct("araaci", 2));
-            
+
+            // https://leetcode.com/problems/longest-substring-without-repeating-characters/
+            Console.WriteLine("Given a string, find the length of the longest substring in it with no more than K distinct characters.");
+            LongestSubstring sub = new LongestSubstring();
+            Console.Write(sub.LengthOfLongestSubstring("abcabcbb"));
+
+            // https://leetcode.com/problems/fruit-into-baskets/
+            // Substring with K distinct, K here is 2
+            Console.WriteLine("Fruits into baskets");
+            FruitsIntoBaskets fruits = new FruitsIntoBaskets();
+            Console.Write(fruits.TotalFruit(new int[] { 1,2,1}));
+
             Anagrams an = new Anagrams();
             string[] strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
             an.GroupAnagrams(strs);

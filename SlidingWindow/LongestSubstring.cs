@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SlidingWindow
 {
-    public class LongestSubstring
+    public class LongestSubstringK
     {
         public int LongestSubstringKDistinct(string str, int k)
         {
