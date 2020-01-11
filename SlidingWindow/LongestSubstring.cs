@@ -18,7 +18,7 @@ namespace SlidingWindow
                 char rightChar = c[windowEnd];
                 dict[rightChar] = dict.GetValueOrDefault(rightChar, 0) + 1;
          
-                // shrink window till we have only k disctint characters in the dictionary
+                // shrink window till we have only k distinct characters in the dictionary
                 while(dict.Count > k)
                 {
                     char leftChar = c[windowStart];
