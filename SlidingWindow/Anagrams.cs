@@ -149,7 +149,7 @@ namespace SlidingWindow
         /// <summary>
         /// https://leetcode.com/problems/valid-anagram/description/
         /// Time: O(nlogn)
-        /// Space: O(1) or O(n) if ToCHarArray creates extra space
+        /// Space: O(1) or O(n) if ToCharArray creates extra space
         /// </summary>
         /// <param name="s"></param>
         /// <param name="t"></param>
@@ -221,5 +221,64 @@ namespace SlidingWindow
             }
             return new List<IList<string>> (res.Values);
         }
+    public List<int> FindAnagrams_Hashmap(string s, string p)
+    {
+
+    int ns = s.Length, np = p.Length;
+    if (ns < np) return new List<int>();
+
+    Dictionary<char, int> pMap = new Dictionary<char,int>();
+    Dictionary<char, int> sMap = new Dictionary<char, int>();
+        // build reference hashmap using string p
+        for(int i =0;i<p.Length;i++)
+        {
+            if (pMap.ContainsKey(p[i]))
+            {
+                pMap[p[i]] = pMap.GetValueOrDefault(p[i], 0) + 1;
+            }
+            else
+            {
+                pMap.Add(p[i], 1);
+            }
+        }
+
+        List<int> output = new List<int>();
+        // sliding window on the string s
+        for (int i = 0; i < ns; ++i)
+        {
+            // add one more letter 
+            // on the right side of the window
+            char ch = s[i];
+            if (sMap.ContainsKey(ch))
+            {
+                sMap[ch] = pMap.GetValueOrDefault(ch, 0) + 1;
+            }
+            else
+            {
+                sMap.Add(ch, 1);
+            }
+                // remove one letter 
+                // from the left side of the window
+                if (i >= np)
+            {
+                ch = s[i - np];
+                if (sMap[ch] == 1)
+                {
+                    sMap.Remove(ch);
+                }
+                else
+                {
+                    sMap.Add(ch, sMap[ch] - 1);
+                }
+            }
+            // compare hashmap in the sliding window
+            // with the reference hashmap
+            if (pMap.Equals(sMap))
+            {
+                output.Add(i - np + 1);
+            }
+        }
+        return output;
+    }
     }
 }

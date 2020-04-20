@@ -5,7 +5,7 @@ namespace SlidingWindow
 {
     public class LongestSubstringK
     {
-        public int LongestSubstringKDistinct(string str, int k)
+        public int LongestSubstringKDistinctSum (string str, int k)
         {
             int windowStart = 0;
             int maxLength = 0;

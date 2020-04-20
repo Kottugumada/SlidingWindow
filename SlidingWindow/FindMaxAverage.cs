@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SlidingWindow
 {
-	public class MaxAverage
+    public class MaxAverage
 	{
 		public double FindMaxAverage(int[] nums, int k)
 		{

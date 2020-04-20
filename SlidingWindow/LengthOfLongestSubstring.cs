@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SlidingWindow
 {
     class LongestSubstring
     {
+        /// <summary>
+        /// https://leetcode.com/problems/longest-substring-without-repeating-characters/
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public int LengthOfLongestSubstring(string s)
         {
             // O(n)
